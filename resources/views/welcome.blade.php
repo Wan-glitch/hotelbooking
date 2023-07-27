@@ -9,7 +9,7 @@
     <H1>WELCOME TO HOTEL BOOKING</H1>
         <div style="border : 4px solid black;">
             <H2>REGISTER NEW USER</H2>
-            <form action="/register" method="POST">
+            <form action="/hotels" method="POST">
                 @csrf
                 <input type="text" placeholder="username">
                 <input type="text" placeholder="email">
@@ -20,7 +20,7 @@
 
         <div style="border : 4px solid black;">
             <H2>LOG IN</H2>
-            <form action="/register" method="POST">
+            <form action="/hotels" method="POST">
                 @csrf
                 <input type="text" placeholder="username">
                 <input type="text" placeholder="email">

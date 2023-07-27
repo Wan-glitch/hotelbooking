@@ -23,18 +23,6 @@ class HotelController extends Controller
         ]);
     }
 
-    public function showBookingPage($hotelid)
-    {
-        // Fetch the hotel record from the database based on the $hotelid
-        $hotel = Hotel::find($hotelid);
-        echo $hotelid;
-
-        // Add any additional logic you need to prepare data for the booking page
-
-        // Pass the hotel data to the booking view
-        return view('hotels');
-    }
-
     /**
      * Show the form for creating a new resource.
      */

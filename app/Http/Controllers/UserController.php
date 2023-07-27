@@ -8,14 +8,13 @@ class UserController extends Controller
 {   
     public function register(Request $request)
     {
-        return view('hotel');
+        return view('hotels');
     }
 
     public function viewhotel(){
         return view('welcome');
     }
 }
-
 
 
 //ORM eloquent

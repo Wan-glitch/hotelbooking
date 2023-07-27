@@ -28,7 +28,7 @@
       function bookHotel(hotelId) {
           // Handle booking process for the selected hotel with ID = hotelId
           // You can redirect to a booking page or perform any other action here
-          alert('Booking for Hotel ID ' + hotelId);
+          alert('Hello Booking for Hotel ID ' + hotelId);
       }
   </script>
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HotelController;
 use App\Http\Controllers\UserController;
+use App\Models\Hotel;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,10 +22,14 @@ Route::get('/', function () {
 
 
 //include csrf token
-Route::post('/register',[UserController::class, 'register']);
+//Route::post('/register',[UserController::class, 'register']);
+
+Route::post('/hotels',[HotelController::class, 'index']);
 
 //to call all function
-Route::resource('/hotels',HotelController::class);
+//Route::resource('/hotels',HotelController::class);
+
+Route::get('/hotels', [HotelController::class, 'index']);
 
 //Route::get('/book/{hotelid}', [HotelController::class, 'showBookingPage']);
 
