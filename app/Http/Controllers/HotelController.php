@@ -23,6 +23,17 @@ class HotelController extends Controller
         ]);
     }
 
+
+
+    public function showHotelPage($id) {
+        $hotelData = Hotel::find($id);
+
+        // Pass the fetched data to the view
+        return view('hotel', ['hotelData' => $hotelData]);
+
+
+
+    }
     /**
      * Show the form for creating a new resource.
      */

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HotelController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,22 @@ Route::post('/hotels',[HotelController::class, 'index']);
 //Route::resource('/hotels',HotelController::class);
 
 Route::get('/hotels', [HotelController::class, 'index']);
+
+
+
+
+Route::get('/book/hotel/{id}', [HotelController::class, 'showHotelPage']) -> name ('hotel');
+
+
+// Route::get('/get-hotel-data/{id}', [HotelController::class, 'getHotelData'])->name('get.hotel.data');
+
+
+
+
+
+
+
+
 
 //Route::get('/book/{hotelid}', [HotelController::class, 'showBookingPage']);
 
