@@ -17,9 +17,13 @@
             <center>
                 <p><strong>{{ $hotelData->name }}</strong> </p>
                 <p><strong>Location</strong> </br> {{ $hotelData->location }}</p>
-                <img src="{{URL('/images/image3.jpeg')}}" alt="Page not found"><br>
+
+
+                <img src="{{$hotelData ->img}}" /> <br>
+
 
                 <form action="{{ route('hotel', ['id' => $hotelData->id]) }}" method="GET">
+                @csrf
                     <button type="submit" class="btn btn-primary">Reserve</button>
                 </form>
 

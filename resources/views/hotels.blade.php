@@ -19,6 +19,7 @@
         <img src="{{URL('/images/image3.jpeg')}}" alt="Page not found"><br>
 
         <form action="{{ route('hotel', ['id' => $hotel->id]) }}" method="GET">
+            @csrf
             <button type="submit" class="btn btn-primary">Reserve</button>
         </form>
 
