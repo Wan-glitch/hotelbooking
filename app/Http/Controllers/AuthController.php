@@ -13,44 +13,44 @@ class AuthController extends Controller
     {
         return view('register');
     }
- 
+
     public function registerPost(Request $request)
     {
         $user = new User();
- 
+
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
- 
+
         $user->save();
- 
-        
+
+
         return redirect('/login');
     }
- 
+
     public function login()
     {
         return view('login');
     }
- 
+
     public function loginPost(Request $request)
     {
         $credetials = [
             'email' => $request->email,
             'password' => $request->password,
         ];
- 
+
         if (Auth::attempt($credetials)) {
-            return redirect('/home')->with('success', 'Login Success');
+            return redirect('/hotels')->with('success', 'Login Success');
         }
- 
+
         return back()->with('error', 'Error Email or Password');
     }
- 
+
     public function logout()
     {
         Auth::logout();
- 
+
         return redirect()->route('login');
     }
 }

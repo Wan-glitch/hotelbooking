@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HotelController;
 
 
@@ -16,7 +17,7 @@ use App\Http\Controllers\HotelController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 
@@ -28,7 +29,7 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/home', [HomeController::class, 'index']);
+    Route::get('/hotels', [HomeController::class, 'index']);
     Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
