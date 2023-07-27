@@ -1,8 +1,5 @@
 <?php
 
-use App\Http\Controllers\HotelController;
-use App\Http\Controllers\UserController;
-use App\Models\Hotel;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,34 +34,34 @@ Route::get('/hotels', [HotelController::class, 'index']);
 
 //     1. **Model:**
 //     The Model will handle interactions with the database and represent the hotel data. It should include methods to fetch a list of available hotels, retrieve specific hotel details, and handle the booking process.
-    
+
 //     2. **View:**
 //     The View will be responsible for presenting the hotel information and the booking form to users. It will display a list of available hotels, show individual hotel details, and provide a form for users to book a hotel.
-    
+
 //     3. **Controller:**
 //     The Controller will act as an intermediary between the Model and the View. It will handle user requests, process form submissions, and coordinate data flow between the Model and the View. It will have methods to show the list of hotels, display individual hotel details, and process hotel bookings.
-    
+
 //     4. **Database:**
 //     You will need to set up a database to store hotel information, such as hotel names, descriptions, images, availability, and booking details.
-    
+
 //     Now, let's break down the steps for each component:
-    
+
 //     1. **Model (`Hotel.php`):**
 //        - The `Hotel` model will handle interactions with the database and provide methods to fetch hotel data and handle bookings.
-    
+
 //     2. **View (`hotels/index.blade.php`, `hotels/show.blade.php`, `bookings/create.blade.php`):**
 //        - The `index.blade.php` view will show a list of available hotels with their basic information.
 //        - The `show.blade.php` view will display detailed information about a specific hotel.
 //        - The `create.blade.php` view will provide a form for users to book a hotel.
-    
+
 //     3. **Controller (`HotelController.php`, `BookingController.php`):**
 //        - The `HotelController` will have methods to show the list of hotels and display individual hotel details.
 //        - The `BookingController` will handle the booking process, including showing the booking form and processing form submissions.
-    
+
 //     4. **Database:**
 //        - Set up a database table for hotels with appropriate columns to store hotel information.
 //        - Create a table for bookings to store the booking details, such as the user's name, email, check-in date, check-out date, and hotel ID.
-    
+
 //     With this basic structure in place, users will be able to view a list of available hotels, see detailed information about each hotel, and book a hotel by submitting the booking form. The Controller will handle user requests, interact with the Model to fetch and store data, and pass data to the appropriate views for display.
-    
+
 //     Remember that this is a simplified overview, and in a real-world application, you would need to implement additional features such as authentication, validation, error handling, and proper database interactions. Additionally, using a full-featured MVC framework like Laravel can greatly simplify the development process and provide many built-in features to handle various aspects of your hotel booking system.
