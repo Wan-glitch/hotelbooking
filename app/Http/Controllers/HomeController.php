@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     public function index() {
         // Pass the fetched data to the view
-        return view('hotels');
+        return view('home');
 
 
 

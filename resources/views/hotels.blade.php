@@ -13,10 +13,9 @@
   <div>
     @foreach ($hotels as $hotel)
     <div>
-        <p><strong>Hotel ID:</strong> {{ $hotel->id }}</p>
-        <p><strong>Hotel Name:</strong> {{ $hotel->name }}</p>
-        <p><strong>Hotel Location:</strong> {{ $hotel->location }}</p>
-        <img src="{{URL('/images/image3.jpeg')}}" alt="Page not found"><br>
+        <p><strong>{{ $hotel->name }}</strong> </p>
+        <p><strong>{{ $hotel->location }}</strong> </p>
+        <img src="{{URL($hotel->image)}}" alt="{{ $hotel->name}}"><br>
 
         <form action="{{ route('hotel', ['id' => $hotel->id]) }}" method="GET">
             @csrf

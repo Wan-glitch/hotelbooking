@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HotelController;
 
 
@@ -25,11 +26,11 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('/register', [AuthController::class, 'register'])->name('register');
     Route::post('/register', [AuthController::class, 'registerPost'])->name('register');
     Route::get('/login', [AuthController::class, 'login'])->name('login');
-    Route::post('/login', [AuthController::class, 'loginPost'])->name('login');
+    Route::post('/login', [AuthController::class, 'loginPost'])->name('home');
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/hotels', [HomeController::class, 'index']);
+    Route::get('/home', [HomeController::class, 'index']);
     Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
@@ -39,12 +40,12 @@ Route::group(['middleware' => 'auth'], function () {
 //include csrf token
 //Route::post('/register',[UserController::class, 'register']);
 
-Route::post('/hotels',[HotelController::class, 'index']);
+Route::post('/home',[HotelController::class, 'index']);
 
 //to call all function
 //Route::resource('/hotels',HotelController::class);
 
-Route::get('/hotels', [HotelController::class, 'index']);
+Route::get('/home', [HotelController::class, 'index']);
 
 
 

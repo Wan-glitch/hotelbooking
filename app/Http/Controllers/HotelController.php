@@ -14,11 +14,10 @@ class HotelController extends Controller
     {
         //SELECT*FROM ALL
         $hotels = Hotel::all();
+        // Debug statement
+        // dd($hotels);
 
-        //select one hotel
-        //$hotels = Hotel::where('name','Hotel Melaka')->get();
-
-        return view('hotels', [
+        return view('home', [
             'hotels' => $hotels
         ]);
     }
