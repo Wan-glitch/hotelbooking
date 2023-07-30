@@ -18,13 +18,26 @@
                 <li class="nav-item active"> <!-- 'Home' button is on the left -->
                     <a class="nav-link" aria-current="page" href="#">Home</a>
                 </li>
+
+
                 <!-- Other navigation items here -->
             </ul>
+
+            <li button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userProfileModal">
+
+                <i class="bi bi-person-circle"></i> Update Profile
+
+            </button> </li>
+
             <form action="{{ route('logout') }}" method="POST" class="d-flex" role="search">
                 @csrf
                 @method('DELETE')
                 <button class="btn btn-danger ms-auto" type="submit">Logout</button> <!-- 'Logout' button is on the right -->
             </form>
+
+
+            @include('layouts.user_profile_modal')
+            <ul> </ul>
         </div>
     </div>
 </nav>

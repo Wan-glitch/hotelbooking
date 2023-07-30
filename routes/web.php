@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HotelController;
-
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,11 +56,10 @@ Route::get('/book/hotel/{id}', [HotelController::class, 'showHotelPage']) -> nam
 // Route::get('/get-hotel-data/{id}', [HotelController::class, 'getHotelData'])->name('get.hotel.data');
 
 
+Route::post('/update-profile', [UserController::class, 'updateProfile'])->name('update.profile');
 
-
-
-
-
+//Dropdown Modal
+Route::get('/reserve', [HotelController::class, 'getroom']);
 
 
 //Route::get('/book/{hotelid}', [HotelController::class, 'showBookingPage']);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hotel;
+use App\Models\Room;
 use Illuminate\Http\Request;
 
 class HotelController extends Controller
@@ -33,12 +34,11 @@ class HotelController extends Controller
 
 
     }
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function getroom()
     {
-        //
+        $rooms = Room::all(); // Retrieve all rooms from the database
+
+        return view('layouts.reserve', ['rooms' => $rooms]);
     }
 
     /**

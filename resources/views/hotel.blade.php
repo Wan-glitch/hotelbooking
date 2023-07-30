@@ -6,6 +6,12 @@
     <title>{{$hotelData->name}}</title>
 
 </head>
+<script>
+    // Customize Bootstrap modal options
+    $(document).ready(function () {
+        $.fn.modal.Constructor.DEFAULTS.backdrop = 'static';
+    });
+</script>
 
 <body>
     @include('layouts.nav')
@@ -26,16 +32,12 @@
 
                 @include('infohotel')
 
-                <form action="{{ route('hotel', ['id' => $hotelData->id]) }}" method="GET">
-                @csrf
-                    <button
-                        type="button"
-                        class="btn btn-primary btn-lg m-2"
-                        onclick="window.open('https://mdbootstrap.com/docs/standard/', '_blank')">
-                        RESERVE NOW
-                  </button>
+        </br>
 
-                </form>
+        @include('layouts.reserve')
+                <button type="button" class="btn btn-primary btn-floating btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">
+                    RESERVE NOW
+                </button>
 
             </center>
 
