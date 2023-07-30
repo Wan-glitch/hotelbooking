@@ -10,33 +10,31 @@
 <body>
     @include('layouts.nav')
 
-    <div class="image-container" >
-        <center>
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-mdb-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="{{$hotelData ->img}}" class="d-block w-40" alt="Wild Landscape"/>
-                  </div>
-                </div>
-              </div>
-        </center>
-
+    <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+        <center> <img src="{{$hotelData ->img}}"  class="img-fluid" />
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+        </a>
+      </div>
 
             <center>
                 <br>
 
             </br>
                 <h2><strong>{{ $hotelData->name }}</strong> </h2>
-                <h4><strong>Location</strong> </br> {{ $hotelData->location }}</h4>
+                <h4> {{ $hotelData->location }}</h4>
 
-
-                <img src="{{$hotelData ->img}}" /> <br>
-
-
+                @include('infohotel')
 
                 <form action="{{ route('hotel', ['id' => $hotelData->id]) }}" method="GET">
                 @csrf
-                    <button type="submit" class="btn btn-primary">Reserve</button>
+                    <button
+                        type="button"
+                        class="btn btn-primary btn-lg m-2"
+                        onclick="window.open('https://mdbootstrap.com/docs/standard/', '_blank')">
+                        RESERVE NOW
+                  </button>
+
                 </form>
 
             </center>
