@@ -35,11 +35,12 @@
         </br>
 
         @include('layouts.reserve')
-                <button type="button" class="btn btn-primary btn-floating btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">
-                    RESERVE NOW
-                </button>
-
-            </center>
+            <form action=""{{ route('reserve') }}" method="GET">
+                @csrf
+                    <button type="button" class="btn btn-primary btn-floating btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">
+                        RESERVE NOW
+                    </button>
+            </form>
 
         </div>
 

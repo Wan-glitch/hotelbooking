@@ -59,7 +59,10 @@ Route::get('/book/hotel/{id}', [HotelController::class, 'showHotelPage']) -> nam
 Route::post('/update-profile', [UserController::class, 'updateProfile'])->name('update.profile');
 
 //Dropdown Modal
-Route::get('/reserve', [HotelController::class, 'getroom']);
+//Route::get('/book/hotel/', [HotelController::class, 'getroom']);
+//Route::get('/book/hotel/reserve', [HotelController::class, 'getroom']) -> name ('reserve');
+
+
 
 
 //Route::get('/book/{hotelid}', [HotelController::class, 'showBookingPage']);

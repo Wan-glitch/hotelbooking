@@ -1,8 +1,8 @@
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Reservation</h5>
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -52,7 +52,6 @@
 
 
 
-
                 <div class="md-form md-outline input-with-post-icon datepicker">
                     <label for="example">Check-in Date</label>
                     <input placeholder="Select check-in" type="date" id="example" class="form-control" style="margin-left: 0px;">
@@ -65,12 +64,6 @@
                     <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 44px;"></div><div class="form-notch-trailing"></div></div>
                 </div>
 
-                <select name="room" id="room">
-                    <option value="">Select a room</option> <!-- Placeholder -->
-                    @foreach($rooms as $room)
-                        <option value="{{ $room->id }}">{{ $room->name }}</option>
-                    @endforeach
-                </select>
 
 
         </div>

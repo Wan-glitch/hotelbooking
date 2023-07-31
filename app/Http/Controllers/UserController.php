@@ -11,11 +11,11 @@ class UserController extends Controller
 {
     public function register(Request $request)
     {
-        return view('hotels');
+        return view('home');
     }
 
     public function viewhotel(){
-        return view('welcome');
+        return view('home');
     }
 
 
