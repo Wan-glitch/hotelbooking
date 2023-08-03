@@ -8,7 +8,14 @@
     <title>Admin Dashboard</title>
 </head>
 <body>
-    @include('layouts.nav')
+    @include('admin.nav-admin')
+    <div>
+        <p>Create a new Hotel List</p>
+        <form action="/createlist" >
+            @csrf
+            <button>Create a new list</button>
+        </form>
+      </div>
 
 </body>
 </html>

@@ -55,15 +55,25 @@ Route::get('/book/hotel/{id}', [HotelController::class, 'showHotelPage']) -> nam
 
 // Route::get('/get-hotel-data/{id}', [HotelController::class, 'getHotelData'])->name('get.hotel.data');
 
-
+//Update profile
 Route::post('/update-profile', [UserController::class, 'updateProfile'])->name('update.profile');
+
+//Delete hotel
+Route::post('/delete-hotel', [UserController::class, 'deleteHotel'])->name('delete.hotel');
+
+//HotelList
+Route::get('/list', HotelController::class,'hotel_list')->name('hotels.index');
+
+Route::get('/createlist',[HotelController::class,'create'])-> name('createlist');
+Route::post('/createlist',[HotelController::class,'createhotel'])-> name('createlist');
+
 
 //Dropdown Modal
 //Route::get('/book/hotel/', [HotelController::class, 'getroom']);
-//Route::get('/book/hotel/reserve', [HotelController::class, 'getroom']) -> name ('reserve');
+Route::get('/book/hotel/reserve', [HotelController::class, 'getroom']) -> name ('reserve');
 
 
-
+//Image
 
 //Route::get('/book/{hotelid}', [HotelController::class, 'showBookingPage']);
 

@@ -52,6 +52,7 @@
 
 
 
+
                 <div class="md-form md-outline input-with-post-icon datepicker">
                     <label for="example">Check-in Date</label>
                     <input placeholder="Select check-in" type="date" id="example" class="form-control" style="margin-left: 0px;">

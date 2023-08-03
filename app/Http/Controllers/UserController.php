@@ -46,6 +46,42 @@ class UserController extends Controller
 
         return redirect()->back()->with('success', 'Profile updated successfully!');
     }
+
+    public function deletehotel(Request $request)
+    {
+        // Validate the form data
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . auth()->id(),
+        ]);
+
+        // Get the authenticated user
+        $user = User::find(auth()->id());
+
+        if (!$user) {
+            return redirect()->back()->with('error', 'User not found!');
+        }
+
+        // Update user information
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->save();
+
+        return redirect()->back()->with('success', 'Profile updated successfully!');
+    }
+
+    public function list()
+{
+    //SELECT*FROM ALL
+    $users = User::all();
+    // Debug statement
+    // dd($hotels);
+
+    return view('list', [
+        'users' => $users
+    ]);
+}
+
 }
 
 

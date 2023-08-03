@@ -41,12 +41,41 @@
                 </div>
             </div>
         </div>
-            @endforeach
 
+            @endforeach
 
 
 </body>
 </html>
+
+
+
+<!-- The Modal -->
+@foreach ($loclist as $l)
+
+
+<div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="locationModalLabel">Location Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Placeholders for location details -->
+                <p><strong>Location Name:</strong> <span id="locationName">{{ $l->location_name}}</span></p>
+                <p><strong>Project Name:</strong> <span id="projectName">{{ $l->project_name }}</span></p>
+                <p><strong>Status:</strong> <span id="locationStatus">
+                    @if($l->location_status == 1)
+                    <span class="badge bg-label-success me-1">Active</span>
+                    @elseif($l->location_status == 0)
+                    <span class="badge bg-label-secondary me-1">Not Active</span>
+                    @endif</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
 
 
 

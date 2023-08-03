@@ -23,6 +23,22 @@ class HotelController extends Controller
         ]);
     }
 
+    public function create(){
+        return view('createlist');
+    }
+
+    public function createhotel(Request $request){
+        $incomingdata = $request->validate([
+            'name'=> 'required',
+            'location' => 'required',
+            'description' => 'nullable',
+            'img' => 'nullable',
+            'img1' => 'nullable'
+        ]);
+        Hotel::create($incomingdata);
+        return view('home');
+    }
+
 
 
     public function showHotelPage($id) {
@@ -52,10 +68,16 @@ class HotelController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function hotel_list()
     {
-        //
+        //SELECT*FROM ALL
+        $hotels = Hotel::all();
+        // Debug statement
+        // dd($hotels);
+
+        return view('list', compact('hotels'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
